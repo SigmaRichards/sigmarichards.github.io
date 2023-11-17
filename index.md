@@ -1,9 +1,7 @@
 ---
-title: "Temporary Title"
+title: "Sigmari.ch - Home"
 permalink: /
 layout: default
 ---
 
-# Placeholder Header
-
-Some text
+This is a personal website. I may include more information later.
