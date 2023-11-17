@@ -1,4 +1,5 @@
 title: Sigmari.ch
 theme: jekyll-theme-minimal
-description: Daniel Hess
-email: daniel.hess@sigmari.ch
+description: 
+  <p>Daniel Hess</p>
+  <p class='view'>Email&#58; <a href='mailto:daniel.hess@sigmari.ch'>daniel.hess@sigmari.ch</a></p>
