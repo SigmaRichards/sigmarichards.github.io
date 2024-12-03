@@ -6,6 +6,7 @@ ROOT_APP="root"
 BUILD_DIR="build"
 
 PREBUILT_DIR="build"
+ASSETS_DIR="assets"
 SKELETON_FILE="index.html"
 DEFAULTS="defaults"
 
@@ -46,6 +47,9 @@ for c_dir in ./*; do
 	if [[ -d $c_dir ]]; then
 		cd $c_dir
 		build-app $c_dir
+		if [[ -d $ASSETS_DIR ]]; then
+			cp -r $ASSETS_DIR/* $ROOT_DIR/$BUILD_DIR/$c_dir/.
+		fi
 		cd ..
 	fi
 done

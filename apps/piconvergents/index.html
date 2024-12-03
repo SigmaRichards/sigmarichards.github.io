@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Main</title>
+  <link rel="stylesheet" href="https://latex.now.sh/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+  <script>
+    customElements.define('math-katex',
+      class extends HTMLElement {
+        constructor() { super(); }
+        connectedCallback() { this.setContent(); }
+        attributeChangedCallback() { this.setContent(); }
+        static get observedAttributes() { return [ 'texstring', 'displaymode' ]; }
+        setContent()
+        {
+          const texstring = this.getAttribute('texstring');
+          const displaymode = this.getAttribute('displaymode')
+          this.innerHTML = katex.renderToString(texstring, { 
+    	      throwOnErrr: false,
+    	      displayMode: (displaymode === "true")
+          });
+        }
+      }
+    );
+  </script>
+  <script>var app = Elm.Main.init();</script>
+</body>
+</html>
+
